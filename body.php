@@ -11,9 +11,10 @@ require ('connection.php'); ?>
 <?php
   $query = $con->prepare("SELECT * FROM noticias ORDER BY fecha DESC LIMIT 5");
    
-  $query->execute();
+   $query->execute();
 
  ?>
+ <h2>Últimas 5 noticias</h2>
  <?php
  
  while($row = $query->fetch()){?>

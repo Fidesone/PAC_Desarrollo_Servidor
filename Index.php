@@ -3,6 +3,7 @@
    echo "Se ha realizado exitosamente la conexion" . '<br>';
    require ('header.php');
    require ('body.php');
+   require ('list_news.php');
    
    
    
