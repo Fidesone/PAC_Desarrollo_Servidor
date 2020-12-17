@@ -1,25 +1,26 @@
- <?php
+<?php
     include ("connection.php");
-   echo "Se ha realizado exitosamente la conexion";
+   echo "Se ha realizado exitosamente la conexion" . '<br>';
+   require ('header.php');
+   require ('body.php');
    
-   $query = $con->prepare("SELECT * FROM actor");
    
-   $query->execute();
+   
 
  ?>
 
 
-<?php 
-  
-  while($row = $query->fetch()){
+<!DOCTYPE html>
+<head>
+<link href="css/style.css" rel="stylesheet" type="text/css">
 
-    echo $row ["actor_id"] . '<br>';
-    echo $row ["first_name"] . '<br>';
-    echo $row ["last_name"] . '<br>';
-    
+</head>
 
+<body>
 
 
-  }
 
-?>
+</body>
+</html>
+
+
