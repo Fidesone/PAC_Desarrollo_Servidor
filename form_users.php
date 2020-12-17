@@ -2,12 +2,18 @@
  require ('connection.php');
  echo "Lista de usuarios";
 ?>
+<form action="form_users.php" method="post">
+    <input type='number' name='Id' placeholder='ID'><br></br>
+    <input type='text' name='Nombre' placeholder='Nombre'><br></br>
+    <input type='email' name='Email' placeholder='Email'><br></br>
+    <div>
+        <input type='sumbit' name='insert' value='Add'>
+        <input type='sumbit' name='update' value='Update'>
+        <input type='sumbit' name='delete' value='Delete'>
+    </div>
 
-<form action='form_users.php' method="post">
-    <input name='action' type='hidden' value='new'> 
-    <input name='id' type='hidden' value='0'> 
-    <input name='submit' value='nuevo'></input> 
 </form>
+
 
 <?php
     $query = $con->prepare("SELECT * FROM usuarios");
@@ -44,15 +50,19 @@ while($row = $query->fetch()){?>
     </td>
     <td>
         <form action="form_users.php" method="post">
-            <input name='id' type='hidden' value='<?php echo $row['Id']?>'> 
-            <input name='action' type='hidden' value='Modificar'> 
+            <input name='id' type='hidden' value='<?php echo $row['Id']?>'> </input>
+            <input name='id' type='hidden' value='<?php echo $row['Nombre']?>'> </input>
+            <input name='id' type='hidden' value='<?php echo $row['Email']?>'> </input>   
+            <input name='action' type='hidden' value='Modificar'> </input> 
             <input name='submit' value='Modificar'></input> 
         </form>
     </td>
     <td>
         <form action="form_users.php" method="post">
-            <input name='id' type='hidden' value='<?php echo $row['Id']?>'> 
-            <input name='action' type='hidden' value='Eliminar'> 
+            <input name='id' type='hidden' value='<?php echo $row['Id']?>'></input> 
+            <input name='id' type='hidden' value='<?php echo $row['Nombre']?>'> </input> 
+            <input name='id' type='hidden' value='<?php echo $row['Email']?>'> </input>  
+            <input name='action' type='hidden' value='Eliminar'> </input> 
             <input name='submit' value='Eliminar'></input> 
         </form>
 </td>

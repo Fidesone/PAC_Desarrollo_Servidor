@@ -1,9 +1,12 @@
 
 <?php
-require ('connection.php');
+require ('connection.php'); ?>
+<style>
+<?php require ('css/style.css');?>
+</style>
 
  
- ?>
+ 
 
 <?php
   $query = $con->prepare("SELECT * FROM noticias ORDER BY fecha DESC LIMIT 5");
